@@ -1,0 +1,5 @@
+dtparam=watchdog=on in /boot/config.txt
+
+edit /etc/systemd/system.conf and set RuntimeWatchdogSec to your preferred value, like 30s for 30 seconds. Run systemctl daemon-reload to apply the change.
+
+You can use wdctl to confirm the watchdog is available, which gives you a little more info than looking to see if /dev/watchdog is present.
